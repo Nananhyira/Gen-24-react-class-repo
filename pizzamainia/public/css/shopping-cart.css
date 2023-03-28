@@ -1,0 +1,62 @@
+.sizes .sz {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(206, 197, 197);
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    height: 150px;
+    /* width: 250px; */
+    width: 100%;
+}
+
+.card {
+    position: relative;
+    height: 300px;
+}
+
+.card img {
+    transition: all .8s;
+}
+
+.card img:hover {
+    transform: scale(1.5);
+}
+
+.card a {
+    border-radius: 0;
+}
+
+.card .over {
+    overflow: hidden;
+}
+
+.fs {
+    background-color: black;
+    padding: 8px 10px;
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.star {
+    position: relative;
+}
+
+.star::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #f8f9fa;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 35%;
+    left: -5px;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}

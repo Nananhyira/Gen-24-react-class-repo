@@ -1,0 +1,35 @@
+.navbar-home,
+footer {
+	background-color: darkred;
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-toggler {
+	color: aliceblue;
+}
+
+.navbar-light .navbar-nav .active > .nav-link,
+.nav-brand,
+.navbar-light .navbar-nav .nav-link {
+	color: aliceblue;
+}
+
+#introCarousel,
+.carousel-inner,
+.carousel-item,
+.carousel-item.active {
+	height: 70vh;
+}
+
+img {
+	max-width: 100%;
+}
+
+.about-img {
+	height: 400px;
+}
+
+.type .card:nth-child(1) img,
+.type .card:nth-child(2) img {
+	height: 250px;
+}
