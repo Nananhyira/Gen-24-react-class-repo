@@ -1,0 +1,50 @@
+
+.navbar-home.bg-light {
+    background-color: #993014 !important;
+    color: white;
+}
+.navbar-home .navbar-brand{
+	color: white;
+}
+.navbar-home .navbar-nav .nav-link {
+    color: rgb(255 255 255 / 50%);
+    border:none;
+
+}
+
+.carousel-edit{
+   height: 550px;
+}
+
+
+.about-pizza{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.about-pizza h2{
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+
+.image-edit img{
+    width: 100%;
+    height: 400px;
+}
+
+.pizza-types h3{
+    margin-bottom: 30px;
+}
+
+.pizza-types img{
+    width: 287px;
+    height: 300px;
+}
+.footer{
+background-color: #993014;
+color: white;
+padding: 20px;
+margin-top: 30px;
+margin-bottom: 20px;
+}
