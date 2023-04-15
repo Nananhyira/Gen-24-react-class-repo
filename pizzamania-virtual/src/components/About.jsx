@@ -34,7 +34,19 @@ const About = () => {
 						aliquip ex ea commodo consequat. Duis aute irure dolor in
 						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
 						pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-						culpa qui officia deserunt mollit anim id est laborum.
+						culpa qui officia deserunt mollit anim id est laborum. Some quick
+						example text to build on the card title and make up the bulk of the
+						card's content. Some quick example text to build on the card title
+						and make up the bulk of the card's content.Some quick example text
+						to build on the card title and make up the bulk of the card's
+						content.
+					</p>
+					<p>
+						Some quick example text to build on the card title and make up the
+						bulk of the card's content. Some quick example text to build on the
+						card title and make up the bulk of the card's content.Some quick
+						example text to build on the card title and make up the bulk of the
+						card's content.
 					</p>
 				</div>
 			</div>
