@@ -2,6 +2,8 @@ import "./App.css";
 import ClassExercise from "./components/ClassExercise";
 import CounterApp from "./components/CounterApp";
 import CounterFunction from "./components/CounterFunction";
+import FormClass from "./components/FormClass";
+import Formfunction from "./components/Formfunction";
 
 function App() {
 	return (
@@ -10,7 +12,8 @@ function App() {
 			{/* <CounterApp />
 			<hr></hr>
 			<CounterFunction /> */}
-			<ClassExercise />
+			{/* <ClassExercise /> */}
+			<Formfunction />
 		</div>
 	);
 }
