@@ -2,6 +2,8 @@ import "./App.css";
 import ClassComponent from "./components/ClassComponent";
 import ClassExample from "./components/ClassExample";
 import CounterClass from "./components/CounterClass";
+import FormClass from "./components/FormClass";
+import FormFunction from "./components/FormFunction";
 import FunctionalComponent from "./components/FunctionalComponent";
 
 function App() {
@@ -10,7 +12,10 @@ function App() {
 			{/* <ClassComponent />
 			<ClassExample /> */}
 			{/* <FunctionalComponent/> */}
-			<CounterClass />
+			{/* <CounterClass /> */}
+			<FormClass />
+			<hr></hr>
+			<FormFunction />
 		</div>
 	);
 }
