@@ -9,9 +9,9 @@ function Users({ data }) {
 			<Row>
 				{data.map((item, index) => {
 					return (
-						<Col md="4">
+						
 							<User user={item} />
-						</Col>
+						
 					);
 				})}
 			</Row>

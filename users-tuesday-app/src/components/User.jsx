@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Card } from 'react-bootstrap'
+import { Button, Card,Col } from 'react-bootstrap'
 
  class User extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ import { Button, Card } from 'react-bootstrap'
   }
   render() {
     return (
-			<div>
+			<Col md="4">
 				<Card style={{ width: "18rem" }}>
 					<Card.Body>
 						<Card.Title>Student Details</Card.Title>
@@ -16,10 +16,12 @@ import { Button, Card } from 'react-bootstrap'
 						<p>Email:{this.props.user.email}</p>
 						<p>Gen:{this.props.user.gen} </p>
 						<Button href="#">Edit</Button>
-						<Button href="#" variant='danger'>Delete</Button>
+						<Button href="#" variant="danger">
+							Delete
+						</Button>
 					</Card.Body>
 				</Card>
-			</div>
+			</Col>
 		);
   }
 }

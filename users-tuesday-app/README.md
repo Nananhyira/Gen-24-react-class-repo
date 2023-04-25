@@ -75,6 +75,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## Tasks
  1. install react bootstrap
  2. create components
- 3. create form 
- 4. create user
- 5.
+ 3. create form  components
+    1. create state for form
+    2. add eventListeners for the inputs 
+    3. add evenHandler for the submit
+ 4. create users
+    1.  add a single user component to the users component
+ 5. create single user component
+ 6. create general in state salled studentsData in app.js to all the data from the form 
+    1. create function to add new user to the state 
+    2. pass function to the the userForm as a props 
+    3. call function in the UserForm component as props and add new user to the state in app. js 
+
+  7. display all students in the studentData  
