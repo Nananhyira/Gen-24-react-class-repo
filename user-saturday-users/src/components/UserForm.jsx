@@ -12,20 +12,25 @@ const UserForm = (props) => {
 		setContacts({ ...contacts, [e.target.name]: e.target.value });
 		console.log(contacts);
 	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setContacts(
-		{
+    //this code is commented out because it  is not an ideal way to solve this problem at this time.
+		// setContacts(
+		// {
+		//   name:contacts.name,
+		//   email:contacts.email,
+		//   gen:contacts.gen
+		// })
+    //ther
+    // ideal way is to store the details in an object and pass it  as 
+   let person ={
 		  name:contacts.name,
 		  email:contacts.email,
 		  gen:contacts.gen
-		})
+		}
 
-		props.user({
-			name: contacts.name,
-			email: contacts.email,
-			gen: contacts.gen,
-		});
+		props.user(person);
 		//  console.log(details)
 	};
 
