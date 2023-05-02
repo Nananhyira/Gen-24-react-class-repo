@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import {v4 as uuid} from "uuid"
 
 function UserForm(props) {
 	const [name, setName] = useState("");
@@ -22,9 +23,10 @@ function UserForm(props) {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		let studentsDetails = {
-			name,
-			email,
-			gen,
+			name:name,
+			email: email,
+			gen:gen,
+			id:uuid()
 		};
 		props.newUser(studentsDetails);
 		setEmail("");

@@ -2,7 +2,7 @@ import React from "react";
 import User from "./User";
 import { Container, Row, Col } from "react-bootstrap";
 
-function Users({ data }) {
+function Users({ data , deleteUser , editUser}) {
 	return (
 		<Container>
 			<h1>see all users</h1>
@@ -10,7 +10,7 @@ function Users({ data }) {
 				{data.map((item, index) => {
 					return (
 						
-							<User user={item} />
+							<User key={item.id} editUser={editUser} deleteUser={deleteUser} user={item} />
 						
 					);
 				})}

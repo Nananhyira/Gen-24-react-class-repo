@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import { Button, Card,Col } from 'react-bootstrap'
+import EditUser from "./EditUser"
 
  class User extends Component {
   constructor(props) {
     super(props)
-   
+		
   }
+	
+		
+	
   render() {
     return (
 			<Col md="4">
@@ -13,10 +17,14 @@ import { Button, Card,Col } from 'react-bootstrap'
 					<Card.Body>
 						<Card.Title>Student Details</Card.Title>
 						<p>Name:{this.props.user.name} </p>
-						<p>Email:{this.props.user.email}</p>
+						<p>Email:{this.props.user.email} </p>
 						<p>Gen:{this.props.user.gen} </p>
-						<Button href="#">Edit</Button>
-						<Button href="#" variant="danger">
+						<EditUser editUser={this.props.editUser}  user={this.props.user}/>
+						<Button
+							onClick={() => {
+								this.props.deleteUser(this.props.user.id);
+							}}
+							variant="danger">
 							Delete
 						</Button>
 					</Card.Body>
