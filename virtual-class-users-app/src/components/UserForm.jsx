@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
+import {v4 as uuid}from "uuid"
 
 class UserForm extends Component {
   constructor(props){
@@ -13,14 +14,17 @@ class UserForm extends Component {
   handleChange=(e)=>{
       e.preventDefault()
       this.setState({[e.target.name]:e.target.value})
-      console.log(this.state);
+      // console.log(this.state);
     }
 
     handleSubmit=(e)=>{
       e.preventDefault()
-      let details ={name:this.state.name,
+      let details ={
+				name:this.state.name,
         email:this.state.email, 
-        gen:this.state.gen}
+        gen:this.state.gen,
+				id:uuid()
+			}
       this.props.newUser(details)
       this.setState({
 				name: "",

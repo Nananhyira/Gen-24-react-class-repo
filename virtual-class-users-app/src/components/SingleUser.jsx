@@ -1,22 +1,22 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Card,Button,Row,Col } from 'react-bootstrap'
 
-const SingleUser = () => {
+const SingleUser = (props) => {
   return (
-    <div>
-      <Card style={{ width: '18rem' }}>
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
-      </Card.Body>
-    </Card>
-    </div>
+    <Row>
+      <Col md="4">
+          <Card style={{ width: '18rem' }}>
+          <Card.Body>
+            <Card.Title>Students details</Card.Title>
+            <p>Name:{props.details.name}</p>
+            <p> Email:{props.details.email}</p>
+            <p>Gen :{props.details.gen}</p>
+            <Button href="#">Edit</Button>
+            <Button  onClick={()=>{props.deleteUser(props.details.id)}} variant="danger">Delete</Button>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
   )
 }
 
