@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import {v4 as uuid} from "uuid"
 
 const UserForm = (props) => {
 	const [contacts, setContacts] = useState({
@@ -9,8 +10,8 @@ const UserForm = (props) => {
 	});
 	const handleChange = (e) => {
 		e.preventDefault();
-		setContacts({...contacts, [e.target.name]: e.target.value });
-		console.log(contacts);
+		setContacts({ ...contacts, [e.target.name]: e.target.value });
+		// console.log(contacts);
 	};
 
 	const handleSubmit = (e) => {
@@ -25,13 +26,19 @@ const UserForm = (props) => {
 
 		// ideal way is to store the details in an object and pass it  as props to the function.
 		let person = {
+			id:uuid(),
 			name: contacts.name,
 			email: contacts.email,
 			gen: contacts.gen,
 		};
 
 		props.user(person);
-		//  console.log(details)
+		 console.log(person)
+		setContacts({
+			name: "",
+			email: "",
+			gen: "",
+		});
 	};
 
 	return (
@@ -44,6 +51,7 @@ const UserForm = (props) => {
 					onChange={handleChange}
 					name="name"
 					value={contacts.name}
+					required
 				/>
 			</Form.Group>
 			<Form.Group className="mb-3" controlId="formBasicEmail">
@@ -54,6 +62,7 @@ const UserForm = (props) => {
 					name="email"
 					onChange={handleChange}
 					value={contacts.email}
+					required
 				/>
 			</Form.Group>
 			<Form.Group className="mb-3" controlId="formBasicPassword">
@@ -64,6 +73,7 @@ const UserForm = (props) => {
 					name="gen"
 					onChange={handleChange}
 					value={contacts.gen}
+					required
 				/>
 			</Form.Group>
 			<Button variant="primary" type="submit">
