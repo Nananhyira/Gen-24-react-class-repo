@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card,Button,Row,Col } from 'react-bootstrap'
+import EditUser from "./EditUser"
 
 const SingleUser = (props) => {
   return (
@@ -11,7 +12,7 @@ const SingleUser = (props) => {
             <p>Name:{props.details.name}</p>
             <p> Email:{props.details.email}</p>
             <p>Gen :{props.details.gen}</p>
-            <Button href="#">Edit</Button>
+            <EditUser data={props.details} editUser={props.editUser}/>
             <Button  onClick={()=>{props.deleteUser(props.details.id)}} variant="danger">Delete</Button>
           </Card.Body>
         </Card>

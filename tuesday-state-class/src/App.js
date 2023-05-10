@@ -4,6 +4,7 @@ import CounterApp from "./components/CounterApp";
 import CounterFunction from "./components/CounterFunction";
 import FormClass from "./components/FormClass";
 import Formfunction from "./components/Formfunction";
+import Franklin from "./components/Franklin";
 
 function App() {
 	return (
@@ -14,7 +15,10 @@ function App() {
 			<CounterFunction /> */}
 			{/* <ClassExercise /> */}
 			{/* <Formfunction /> */}
-			<ClassExForm />
+			{/* <ClassExForm /> */}
+			<Franklin title="Life Skills" sub="React"/>
+			<Franklin title="RME" sub="JavaScript"/>
+			<Franklin title="maths" sub="NodeJS"/>
 		</div>
 	);
 }

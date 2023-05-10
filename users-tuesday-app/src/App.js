@@ -43,7 +43,7 @@ console.log(studentData);
 				<Col md="4">
           <UserForm newUser={addNewUser}/>
         </Col>
-				<Col md="8">
+				<Col style={{backgroundColor:"red"}}md="8">
           <Users deleteUser={handleDelete} data={studentData} editUser={saveChanges}/>
         </Col>
 			</Row>
