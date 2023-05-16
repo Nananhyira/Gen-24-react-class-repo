@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { food } from "../data";
-// import  "../assets"
+//import  "../assets"
 
 const ServiceDetails = () => {
 	const { id } = useParams();
@@ -14,9 +14,13 @@ const ServiceDetails = () => {
 			{food.map((item) => {
 				if (id === item.id)
 					return (
-						<div>
+						<div style={{ width: "60%", height: "60vh", display:"flex"}}>
 							{/* <h1>{id}</h1> */}
-							<img src={item.imageUrl} alt="food" />
+							<img
+								style={{ width: "30%", height: "50vh" }}
+								src={item?.imageUrl}
+								alt="food"
+							/>
 							<p>Name:{item.name}</p>
 							<p>price:{item.price}</p>
 							<p>CookTime:{item.cookTime}</p>

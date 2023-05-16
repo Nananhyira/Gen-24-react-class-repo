@@ -12,7 +12,6 @@ const Services = () => {
 					<>
 						<Link to={`/service/${item.id}`}><h1>{item.name}</h1></Link>
             <h3> Price:{item.price}</h3>
-            
             <br/>
             <hr/>
 					</>
