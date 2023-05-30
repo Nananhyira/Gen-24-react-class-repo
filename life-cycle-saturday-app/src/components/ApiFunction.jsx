@@ -3,7 +3,6 @@ import axios from "axios";
 
 const ApiFunction = () => {
 	const [post, setPost] = useState([]);
-
 	const getPost = async () => {
 		try {
 			let res = await axios.get("https://jsonplaceholder.typicode.com/posts");
@@ -12,8 +11,10 @@ const ApiFunction = () => {
 		} catch (error) {
 			console.log(error);
 		}
-	};
+	}
+
 	console.log(post);
+
 	useEffect(() => {
 		getPost();
 	}, []);
@@ -35,6 +36,7 @@ const ApiFunction = () => {
 };
 
 export default ApiFunction;
+
 
 // let fostergive = "candy";
 

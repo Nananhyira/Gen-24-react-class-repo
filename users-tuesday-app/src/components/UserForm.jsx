@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import {v4 as uuid} from "uuid"
+import { useDispatch } from "react-redux";
+import { addNewUser } from "../features/userSlice";
 
 function UserForm(props) {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [gen, setGen] = useState("");
+	const dispatch = useDispatch()
 
 	const handleNameChange = (e) => {
 		e.preventDefault();
@@ -28,7 +31,8 @@ function UserForm(props) {
 			gen:gen,
 			id:uuid()
 		};
-		props.newUser(studentsDetails);
+dispatch(addNewUser(studentsDetails));
+		// props.newUser(studentsDetails);
 		setEmail("");
 		setGen("");
 		setName("");
