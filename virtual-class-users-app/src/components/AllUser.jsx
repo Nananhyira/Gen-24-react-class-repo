@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import SingleUser from "./SingleUser";
 import { Row, Col } from "react-bootstrap";
+import { connect } from "react-redux";
+
 
 class AllUser extends Component {
 	render() {
@@ -9,7 +11,7 @@ class AllUser extends Component {
 				<h1>This Components displays all the users in our app </h1>
 
 				<Row>
-					{this.props.data.map((item, index) => {
+					{this.props.users.map((item, index) => {
 						return (
 							<Col key={item.id} md="4">
 								<SingleUser
@@ -20,10 +22,22 @@ class AllUser extends Component {
 							</Col>
 						);
 					})}
+					<h1>{this.props.count}</h1>
 				</Row>
 			</>
 		);
 	}
 }
 
-export default AllUser;
+//function to read from the redux store
+const mapState = (state) => {
+	return {
+		//reading from the users store in redux
+	users: state.userReducer.users,
+	// 
+//reading from the count state in redux store 
+	// count:state.userReducer.count
+
+	}
+}
+export default connect(mapState)(AllUser);
