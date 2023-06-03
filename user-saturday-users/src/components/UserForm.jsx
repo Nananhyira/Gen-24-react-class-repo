@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import {v4 as uuid} from "uuid"
+import { addNewUser } from "../reducer/userSlice";
+import { useDispatch } from "react-redux";
 
 const UserForm = (props) => {
 	const [contacts, setContacts] = useState({
@@ -8,6 +10,7 @@ const UserForm = (props) => {
 		email: "",
 		gen: "",
 	});
+	const dispatch = useDispatch()
 	const handleChange = (e) => {
 		e.preventDefault();
 		setContacts({ ...contacts, [e.target.name]: e.target.value });
@@ -31,8 +34,8 @@ const UserForm = (props) => {
 			email: contacts.email,
 			gen: contacts.gen,
 		};
-
-		props.user(person);
+		dispatch(addNewUser(person));
+		// props.user(person);
 		 console.log(person)
 		setContacts({
 			name: "",
