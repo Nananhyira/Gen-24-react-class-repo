@@ -1,20 +1,21 @@
-import React, { useState } from 'react'
-import { Button, Modal ,Form} from 'react-bootstrap';
+import React, { useState } from "react";
+import { Button, Modal, Form } from "react-bootstrap";
+import { editUser } from "../features/userSlice";
+import { useDispatch, connect } from "react-redux";
 
 const EditUser = (props) => {
-   const [show, setShow] = useState(false);
-  const [name, setName] = useState(props.user.name);
+	const [show, setShow] = useState(false);
+	const [name, setName] = useState(props.user.name);
 	const [email, setEmail] = useState(props.user.email);
 	const [gen, setGen] = useState(props.user.gen);
-  
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+	console.log(props);
 
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+	const dispatch = useDispatch();
 
-
-
-  const handleNameChange = (e) => {
-	 e.preventDefault();
+	const handleNameChange = (e) => {
+		e.preventDefault();
 		setName(e.target.value);
 	};
 	const handleEmailChange = (e) => {
@@ -26,14 +27,17 @@ const EditUser = (props) => {
 		setGen(e.target.value);
 	};
 
- const handleChanges=(e)=>{
-  e.preventDefault()
-  let newInfo= {name,email, gen}
-  props.editUser(props.user.id,newInfo)
-  handleClose()
- }
+	const handleChanges = (e) => {
+		e.preventDefault();
+		let newInfo = { name, email, gen, id:props.user.id};
+		// props.editUser(props.user.id,newInfo)
 
-  return (
+		dispatch(editUser({ id: props.user.id, newInfo }));
+		console.log(editUser);
+		handleClose();
+	};
+
+	return (
 		<>
 			<Button variant="primary" onClick={handleShow}>
 				Edit
@@ -44,38 +48,37 @@ const EditUser = (props) => {
 					<Modal.Title>Edit User</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
-          	<Form.Group className="mb-3" controlId="formBasicEmail">
-					<Form.Group className="mb-3" controlId="formBasicPassword">
-						<Form.Label>Name</Form.Label>
+					<Form.Group className="mb-3" controlId="formBasicEmail">
+						<Form.Group className="mb-3" controlId="formBasicPassword">
+							<Form.Label>Name</Form.Label>
+							<Form.Control
+								type="text"
+								placeholder=" full name"
+								value={name}
+								onChange={handleNameChange}
+								required
+							/>
+						</Form.Group>
+						<Form.Label>Email address</Form.Label>
 						<Form.Control
-							type="text"
-							placeholder=" full name"
-							value={name}
-							onChange={handleNameChange}
+							type="email"
+							placeholder="Enter email"
+							value={email}
+							onChange={handleEmailChange}
 							required
 						/>
 					</Form.Group>
-					<Form.Label>Email address</Form.Label>
-					<Form.Control
-						type="email"
-						placeholder="Enter email"
-						value={email}
-						onChange={handleEmailChange}
-						required
-					/>
-				</Form.Group>
-				<Form.Group className="mb-3" controlId="formBasicPassword">
-					<Form.Label>Gen</Form.Label>
-					<Form.Control
-						type="text"
-						placeholder="gen"
-						value={gen}
-						onChange={handleGenChange}
-						required
-					/>
-				</Form.Group>
-				
-        </Modal.Body>
+					<Form.Group className="mb-3" controlId="formBasicPassword">
+						<Form.Label>Gen</Form.Label>
+						<Form.Control
+							type="text"
+							placeholder="gen"
+							value={gen}
+							onChange={handleGenChange}
+							required
+						/>
+					</Form.Group>
+				</Modal.Body>
 				<Modal.Footer>
 					<Button variant="secondary" onClick={handleClose}>
 						Close
@@ -87,6 +90,9 @@ const EditUser = (props) => {
 			</Modal>
 		</>
 	);
-}
+};
+const mapDispatch = {
+	editUser,
+};
 
-export default EditUser
+export default connect(null, mapDispatch)(EditUser);

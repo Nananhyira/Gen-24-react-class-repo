@@ -19,9 +19,45 @@ export const userSlice = createSlice({
 			// = [...state.users, action.payload];
 		},
 
+		deleteUser: (state, action) => {
+			state.users = state.users.filter((user) => {
+				if (user.id !== action.payload) {
+					return state.users;
+				}
+			});
+		},
+
+		editUser: (state, action) => {
+			state.users = state.users.map((user) => {
+				if (user.id === action.payload.id) {
+					return action.payload.newInfo;
+				}
+				return user;
+			});
+			//
+			// const {id, updatedUser}= action.payload
+			// state.users = state.users.map(
+			// 	(user) => (user.id === id?updatedUser  : state.users
+			// 		//  console.log(action)
+			// 		)
+			// );
+
+			// const { id, updatedData } = action.payload;
+			// state.users = state.users.map((user) => {
+			// 	if (user.id === id) {
+			// 		return { ...user, ...updatedData };
+			// 		console.log(action);
+			// 	}
+			// 	return user;
+			// });
+
+			// state.users=state.users.map((user,index)=>user.id===action.payload.id?action.payload.data:user)
+		},
+
 		incrememtAction: (state, action) => {},
 	},
 });
 
-export const { addNewUser, incrememtAction } = userSlice.actions;
+export const { addNewUser, incrememtAction, deleteUser, editUser } =
+	userSlice.actions;
 export default userSlice.reducer;

@@ -21,6 +21,7 @@ function App() {
   // studentData.push(newUserData)
 // }
 // addNewUser({name:"gideon", email:"gideon@gmail.com", gen:23})
+
 // const handleDelete=(userId)=>{
 //   const paidStudent= studentData.filter((student)=>{
 //     if(userId!== student.id)
