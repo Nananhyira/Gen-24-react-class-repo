@@ -28,6 +28,7 @@ class UserForm extends Component {
 			id: uuid(),
 		};
 		this.props.addNewUser(details);
+		console.log(details);
 		// this.props.newUser(details)
 		this.setState({
 			name: "",
@@ -80,10 +81,12 @@ class UserForm extends Component {
 	}
 }
 
+//the mapDispatchToProps is an object containing the acttion to be dispatch to the reducer /store 
 const mapDispatchToProps = {
+	// this action is called to add new user  to the users state from the form
 	addNewUser: addNewUser,
 	// this action is called to add one to the count state
-	// incrementone,
+	 incrementone,
 
 };
 console.log(mapDispatchToProps);

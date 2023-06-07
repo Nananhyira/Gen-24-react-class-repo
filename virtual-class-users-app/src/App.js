@@ -8,10 +8,10 @@ import { v4 as uuid } from "uuid";
 
 
 function App() {
-	const [users, setUsers] = useState([
+	//const [users, setUsers] = useState([
 		// { name: "Ocarlyn ghartey", email: "os@gmail.com", gen: 24, id: uuid() },
 		// { name: "father Bernard", email: "father@gmail.com", gen: 24, id: uuid() },
-	]);
+//	]);
 
 	// const addNewUser = (newInfo) => {
 	// 	setUsers([...users, newInfo]);
@@ -20,10 +20,10 @@ function App() {
 	// };
 
 	// const deleteUser = (id) => {
-	// 	//  const paidUser = users.filter((user)=>{
-	// 	//    if(id !== user.id)
-	// 	//    return user
-	// 	//  })
+		//  const paidUser = users.filter((user)=>{
+		//    if(id !== user.id)
+		//    return user
+		//  })
 	// 	const paidUser = users.filter((user) => id !== user.id);
 	// 	setUsers(paidUser);
 	// };

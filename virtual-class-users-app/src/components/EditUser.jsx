@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { useDispatch } from "react-redux";
+import { editUser } from "../features/userSlice";
 
 function EditUser(props) {
 	const [users, setUsers] = useState({
@@ -13,24 +15,27 @@ function EditUser(props) {
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
+	const dispatch = useDispatch();
 
-
-// this function handles the all the input values
+	// this function handles all the input values
 	const handleChange = (e) => {
 		e.preventDefault();
 		setUsers({ ...users, [e.target.name]: e.target.value });
 		// console.log(users);
 	};
-// thtis function updates the old info of an existing user
+	// thtis function updates the old info of an existing user
 	const handleSubmit = (e) => {
 		e.preventDefault();
-    let updatedInfo = {
+
+		let updatedInfo = {
 			name: users.name,
 			email: users.email,
 			gen: users.gen,
+			id: props.data.id,
 		};
-		props.editUser(props.data.id, updatedInfo);
-    handleClose()
+		dispatch(editUser({ id: props.data.id, updatedInfo }));
+		// props.editUser(props.data.id, updatedInfo);
+		handleClose();
 	};
 
 	return (
