@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import {v4 as uuid} from "uuid"
+import { v4 as uuid } from "uuid";
 import { addNewUser } from "../reducer/userSlice";
 import { useDispatch } from "react-redux";
 
@@ -10,7 +10,7 @@ const UserForm = (props) => {
 		email: "",
 		gen: "",
 	});
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
 	const handleChange = (e) => {
 		e.preventDefault();
 		setContacts({ ...contacts, [e.target.name]: e.target.value });
@@ -29,14 +29,14 @@ const UserForm = (props) => {
 
 		// ideal way is to store the details in an object and pass it  as props to the function.
 		let person = {
-			id:uuid(),
+			id: uuid(),
 			name: contacts.name,
 			email: contacts.email,
 			gen: contacts.gen,
 		};
 		dispatch(addNewUser(person));
 		// props.user(person);
-		 console.log(person)
+		//  console.log(person)
 		setContacts({
 			name: "",
 			email: "",
@@ -78,10 +78,13 @@ const UserForm = (props) => {
 					value={contacts.gen}
 					required
 				/>
+
+
 			</Form.Group>
 			<Button variant="primary" type="submit">
 				Submit
 			</Button>
+			
 		</Form>
 	);
 };

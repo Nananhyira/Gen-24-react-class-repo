@@ -19,12 +19,30 @@ export const userSlice = createSlice({
 		addNewUser: (state, action) => {
 			state.users.push(action.payload);
 		},
+		// editUser:(state, action) => {
+		// 	state.users=state.users.find((user)=>user.id===action.payload.id)
+		// 	if(user){
+		//   [...state.users, newInfo]
+		// 	}
+		// }
 
-		incrementbyfive: (state) => {
-			state.count = state.count + 5;
+		editUser: (state, action) => {
+			state.users = state.users.map((user) => {
+				if (user.id === action.payload.id) {
+					return action.payload.newInfo;
+				}
+				return user;
+			});
 		},
+		deleteUser:(state, action) => {
+			state.users=state.users.filter((user) =>user.id!==action.payload)
+		}
+
+		// incrementbyfive: (state) => {
+		// 	state.count = state.count + 5;
+		//},
 	},
 });
 
-export const { addNewUser, incrementbyfive } = userSlice.actions;
+export const { addNewUser, editUser ,deleteUser} = userSlice.actions;
 export default userSlice.reducer;

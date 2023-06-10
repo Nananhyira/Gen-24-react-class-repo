@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 class AllUsers extends Component {
 	render() {
-		console.log(this.props);
+		// console.log(this.props);
 		return (
 			<Row>
 				{this.props.data.map((item, index) => {

@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Form } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { editUser } from "../reducer/userSlice";
 
 function EditUser(props) {
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
+	const dispatch = useDispatch();
 	const [contacts, setContacts] = useState({
 		name: props.data.name,
 		email: props.data.email,
@@ -19,13 +22,16 @@ function EditUser(props) {
 	};
 	const handleEdit = (e) => {
 		e.preventDefault();
-    let newInfo = {
+		let newInfo = {
 			name: contacts.name,
 			email: contacts.email,
 			gen: contacts.gen,
+			id: props.data.id,
 		};
-		props.editUser(props.data.id,newInfo );
-    handleClose()
+		// console.log(newInfo);
+		dispatch(editUser({ id: props.data.id, newInfo }));
+		// props.editUser(props.data.id,newInfo );
+		handleClose();
 	};
 
 	return (
